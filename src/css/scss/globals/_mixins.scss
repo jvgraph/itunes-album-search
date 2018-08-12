@@ -1,0 +1,47 @@
+////// container
+@mixin _container() {
+  max-width: 1400px;
+  padding: 0 20px;
+  margin: 0 auto;
+  @include _mediaLargerThanMobile {
+    padding: 0 30px;
+  }
+  @include _mediaLargerThanMainBP {
+    padding: 0 40px;
+  }
+  @content;
+}
+
+////GRID LAYOUT
+@mixin _gridWrapper() {
+  display: flex;
+  justify-content: flex-start;
+  &:after {
+    flex: 1 1 auto;
+    display: block;
+  }
+}
+
+@mixin _gridLayout($w:100%, $p: 10px) {
+  width: $w;
+  padding: $p;
+  @content;
+}
+
+@mixin _imageBG() {
+  padding-top: 100%;
+}
+
+////FONT SIZING 
+@mixin _fontSizing($min: 16px, $med: 18px, $large: 20px, $max: 24px) {
+  font-size: $min;
+  @include _mediaLargerThanMobile {
+    font-size: $med;
+  }
+  @include _mediaLargerThanMainBP {
+    font-size: $large;
+  }
+  @include _mediaLargerThanLargeBP {
+    font-size: $max;
+  }
+}

@@ -1,0 +1,10 @@
+@import 'scss/globals/variables';
+@import 'scss/globals/media';
+@import 'scss/globals/mixins';
+@import 'scss/globals/global';
+////PARTIALS
+@import 'scss/partial/header';
+@import 'scss/partial/nav';
+@import 'scss/partial/footer';
+//VIEWS
+@import 'scss/view/home';

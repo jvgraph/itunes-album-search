@@ -1,0 +1,35 @@
+$mobileBP: 740px;
+$mainBP: 980px;
+$mediumBP: 1240px;
+$largeBP: 1440px;
+
+
+@mixin _mediaLargerThan($WIDTH){
+  @media screen and(min-width: $WIDTH){
+    @content;
+  }
+}
+
+@mixin _mediaLargerThanMobile{
+  @media screen and(min-width:$mobileBP){
+    @content;
+  }
+}
+
+@mixin _mediaLargerThanMainBP{
+  @media screen and(min-width: $mainBP){
+    @content;
+  }
+}
+
+@mixin _mediaLargerThanMediumBP{
+  @media screen and(min-width: $mediumBP){
+    @content;
+  }
+}
+
+@mixin _mediaLargerThanLargeBP{
+  @media screen and(min-width: $largeBP){
+    @content;
+  }
+}

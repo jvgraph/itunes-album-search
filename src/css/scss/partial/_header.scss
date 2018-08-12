@@ -1,0 +1,8 @@
+header{
+  border-bottom: 1px solid #eee;
+  display: flex;
+  @include _container;
+  @include _mediaLargerThanMainBP{
+    background-color: aqua;
+  }
+}
