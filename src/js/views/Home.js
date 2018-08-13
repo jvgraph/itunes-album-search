@@ -1,5 +1,3 @@
-//import axios from "axios";
-//const data = `https://itunes.apple.com/search?term=jay-z`;
 export default class Home extends React.Component {
   constructor(props) {
     super(props);
