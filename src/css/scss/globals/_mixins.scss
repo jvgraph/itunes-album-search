@@ -1,6 +1,6 @@
 ////// container
 @mixin _container() {
-  max-width: 1400px;
+  max-width: 980px;
   padding: 0 20px;
   margin: 0 auto;
   @include _mediaLargerThanMobile {

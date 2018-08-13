@@ -31,31 +31,40 @@ export default class Home extends React.Component {
     return data.map(item => {
       return (
         <div className="album" key={item.collectionId}>
+          <div
+            className="image"
+            style={{
+              backgroundImage: `url(${item.artworkUrl100})`
+            }}
+          >
+            <img
+              src={item.artworkUrl100}
+              alt={item.collectionName}
+              draggable={false}
+              style={{ display: "none" }}
+            />
+          </div>
           <div className="album--title">{item.collectionName}</div>
-          <img
-            src={item.artworkUrl100}
-            alt={item.collectionName}
-            draggable={false}
-          />
         </div>
       );
     });
   }
 
   render() {
-    console.log("state", this.state.query);
+    console.log(this.state.data);
     return (
       <div className="home">
-        <h1>HOME PAGE</h1>
-        <div className="search--field">
-          <input
-            placeholder="Search for..."
-            ref={input => (this.search = input)}
-            onChange={this.handleInputChange}
-          />
-          <button onClick={() => this.dataFetch()}>search</button>
+        <div className="search--container">
+          <div className="search--field">
+            <input
+              placeholder="Search for..."
+              ref={input => (this.search = input)}
+              onChange={this.handleInputChange}
+            />
+            <button onClick={() => this.dataFetch()}>search</button>
+          </div>
         </div>
-        {this.renderAlbums()}
+        <div className="albums">{this.renderAlbums()}</div>
       </div>
     );
   }

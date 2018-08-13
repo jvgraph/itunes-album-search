@@ -1,3 +1,86 @@
 .home {
   @include _container;
+  font-weight: 300;
+  .search--container {
+    width: 100%;
+    padding: 30px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .search--field {
+    input {
+      background: #eeeeee url('./../images/search.svg') no-repeat 9px center;
+      background-size: 20px;
+      border: solid 1px #ccc;
+      padding: 0px 30px 0px 32px;
+      width: 55px;
+      -webkit-border-radius: 10em;
+      -moz-border-radius: 10em;
+      border-radius: 10em;
+      -webkit-transition: all .5s;
+      -moz-transition: all .5s;
+      transition: all .5s;
+      height: 41px;
+      line-height: 41px;
+    }
+    input:focus {
+      width: 200px;
+      max-width: 100%;
+      background-color: #fff;
+      border-color: transparent;
+      -webkit-box-shadow: 0 0 5px rgba(109, 207, 246, .5);
+      -moz-box-shadow: 0 0 5px rgba(109, 207, 246, .5);
+      box-shadow: 0 0 5px rgba(109, 207, 246, .5);
+      outline: none;
+    }
+    input:-moz-placeholder {
+      color: #999;
+    }
+    input::-webkit-input-placeholder {
+      color: #999;
+    }
+    button {
+      margin-left: -30px;
+      width: 110px;
+      padding: 11px;
+      background: #6ed3cf;
+      border: none;
+      letter-spacing: 2px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 16px;
+      box-shadow: 5px 7px 5px -3px rgba(0, 0, 0, 0.2);
+      height: 43px;
+      &:focus {
+        outline: none;
+      }
+    }
+  } /////////LAYOUT
+  .albums {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px;
+    .album {
+      max-width: calc(50% - 20px);
+      width: 100%;
+      margin: 20px 10px 20px 10px;
+      @include _mediaLargerThanMobile {
+        max-width: calc((100% / 3) - 20px);
+      }
+      @include _mediaLargerThanMainBP {
+        max-width: calc((100% / 5) - 20px);
+      }
+      .album--title {
+        font-size: 13px;
+        padding: 15px 0;
+        text-transform: uppercase;
+      }
+      .image {
+        padding-top: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    }
+  }
 }
