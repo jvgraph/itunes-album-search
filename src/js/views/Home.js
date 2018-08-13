@@ -17,11 +17,13 @@ export default class Home extends React.Component {
     });
   };
 
-  dataFetch = () => {
+  dataFetch = async () => {
     const { query } = this.state;
-    fetch(`https://itunes.apple.com/search?term=${query}&entity=album`)
-      .then(res => res.json())
-      .then(data => this.setState({ data: data.results }));
+    const res = await fetch(
+      `https://itunes.apple.com/search?term=${query}&entity=album`
+    );
+    const resJson = await res.json();
+    this.setState({ data: resJson.results });
   };
 
   renderAlbums() {
