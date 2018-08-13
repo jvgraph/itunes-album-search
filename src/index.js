@@ -8,4 +8,4 @@ import "./css/app.scss";
 
 //import keenImage from '../assets/keen.png'; // Importing image -> ADDED IN THIS STEP
 
-render(<App />, document.getElementById("albums-container"));
+render(<App />, document.getElementById("app"));

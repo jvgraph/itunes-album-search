@@ -51,7 +51,6 @@ export default class Home extends React.Component {
   }
 
   render() {
-    console.log(this.state.data);
     return (
       <div className="home">
         <div className="search--container">
@@ -64,7 +63,9 @@ export default class Home extends React.Component {
             <button onClick={() => this.dataFetch()}>search</button>
           </div>
         </div>
-        <div className="albums">{this.renderAlbums()}</div>
+        <div className="albums" id="albums-container">
+          {this.renderAlbums()}
+        </div>
       </div>
     );
   }
